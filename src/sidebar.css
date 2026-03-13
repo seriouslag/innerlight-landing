@@ -1,0 +1,118 @@
+.sidebar {
+  width: 320px;
+  min-width: 320px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  background: #ffffff;
+  border-right: 1px solid rgba(26, 32, 104, 0.08);
+  padding: 1.5rem;
+  font-family: var(--font-body);
+}
+
+.sidebar-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.sidebar-section {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.6rem 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border-bottom: 1px solid rgba(26, 32, 104, 0.06);
+}
+
+.sidebar-chevron {
+  font-size: 0.55rem;
+  color: var(--text-muted);
+}
+
+.sidebar-section-body {
+  padding: 0.75rem 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.sidebar-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sidebar-field > span {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.sidebar-field input[type="text"] {
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid rgba(26, 32, 104, 0.1);
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--navy);
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.sidebar-field input[type="text"]:focus {
+  border-color: var(--amber);
+  background: #ffffff;
+}
+
+.color-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.color-input-row input[type="color"] {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(26, 32, 104, 0.1);
+  border-radius: 6px;
+  padding: 2px;
+  cursor: pointer;
+  background: none;
+}
+
+.color-hex-input {
+  flex: 1;
+}
+
+/* Mobile: sidebar becomes top drawer */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid rgba(26, 32, 104, 0.08);
+  }
+}

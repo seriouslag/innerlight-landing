@@ -1,0 +1,2009 @@
+    :root {
+      --navy: #1a2068;
+      --navy-deep: #0e1340;
+      --navy-mid: #141a52;
+      --amber: #e8991c;
+      --amber-light: #f5b94e;
+      --amber-glow: rgba(232, 153, 28, 0.15);
+      --cream: #f5f1eb;
+      --cream-warm: #ede8e0;
+      --cream-dark: #d8d2c8;
+      --text-muted: #6b6880;
+      --white: #ffffff;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+
+      --card-w: 630px;  /* 3.5" × 180 scale factor */
+      --card-h: 360px;  /* 2" × 180 scale factor */
+
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ─── PAGE HEADER ─── */
+    .page-header {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+    }
+
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .page-header h1 .amber { color: var(--amber); }
+
+    .page-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ─── CARD PAIR SECTION ─── */
+    .card-section {
+      padding: 3rem 2rem;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .card-section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.75rem;
+    }
+
+    .card-section-label::before {
+      content: '';
+      width: 20px;
+      height: 2px;
+      background: var(--amber);
+    }
+
+    .card-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-section > p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      max-width: 500px;
+      line-height: 1.5;
+    }
+
+    /* Card pair (front + back) */
+    .card-pair {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card-wrapper {
+      position: relative;
+    }
+
+    .card-face-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      text-align: center;
+    }
+
+    /* ─── BASE CARD ─── */
+    .card {
+      width: var(--card-w);
+      max-width: 100%;
+      height: var(--card-h);
+      aspect-ratio: 630 / 360;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      box-shadow:
+        0 4px 16px rgba(26, 32, 104, 0.08),
+        0 20px 60px rgba(26, 32, 104, 0.05);
+      transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s var(--ease-out-expo);
+    }
+
+    .card:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow:
+        0 8px 32px rgba(26, 32, 104, 0.12),
+        0 30px 80px rgba(26, 32, 104, 0.08);
+    }
+
+    /* ══════════════════════════════════════════
+       DESIGN 1 — "THE CLASSIC"
+       Navy front, cream back. Refined & bold.
+       ══════════════════════════════════════════ */
+
+    .card-1-front {
+      background: var(--navy-deep);
+      display: flex;
+      align-items: center;
+      padding: 0 3rem;
+    }
+
+    .card-1-front .card-left {
+      flex: 1;
+    }
+
+    .card-1-front .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .card-1-front .brand-mark svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .card-1-front .brand-mark span {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+    }
+
+    .card-1-front .tagline {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(245, 241, 235, 0.5);
+      letter-spacing: -0.01em;
+    }
+
+    .card-1-front .tagline .amber { color: var(--amber); font-style: normal; font-weight: 600; }
+
+    .card-1-front .card-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-1-front .card-right svg {
+      width: 140px;
+      height: 140px;
+      opacity: 0.12;
+    }
+
+    /* Amber accent line at top */
+    .card-1-front::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 3rem;
+      right: 60%;
+      height: 3px;
+      background: var(--amber);
+    }
+
+    /* Card 1 Back */
+    .card-1-back {
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2.25rem 2.75rem;
+    }
+
+    .card-1-back .person-info {}
+
+    .card-1-back .person-name {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card-1-back .person-title {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--amber);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .card-1-back .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 2rem;
+    }
+
+    .card-1-back .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-1-back .contact-item svg {
+      width: 14px;
+      height: 14px;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+
+    .card-1-back .contact-item span {
+      font-size: 0.78rem;
+      color: var(--navy);
+      opacity: 0.7;
+    }
+
+    /* Vertical amber line on left */
+    .card-1-back::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 2rem;
+      bottom: 2rem;
+      width: 3px;
+      background: var(--amber);
+    }
+
+    /* ══════════════════════════════════════════
+       DESIGN 2 — "THE MINIMAL"
+       All cream, whisper-quiet. Icon-centered.
+       ══════════════════════════════════════════ */
+
+    .card-2-front {
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .card-2-front svg.center-icon {
+      width: 72px;
+      height: 72px;
+      margin-bottom: 1.25rem;
+    }
+
+    .card-2-front .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-2-front .brand-tagline {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Corner hexagon accents */
+    .card-2-front::before {
+      content: '';
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      width: 8px;
+      height: 8px;
+      background: var(--amber);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+
+    .card-2-front::after {
+      content: '';
+      position: absolute;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      width: 8px;
+      height: 8px;
+      background: var(--amber);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+
+    /* Card 2 Back */
+    .card-2-back {
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2.25rem 3rem;
+      position: relative;
+    }
+
+    .card-2-back .person-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.15rem;
+    }
+
+    .card-2-back .person-title {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--amber);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-2-back .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--amber);
+      margin-bottom: 1.5rem;
+    }
+
+    .card-2-back .contact-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .card-2-back .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card-2-back .contact-row svg {
+      width: 13px;
+      height: 13px;
+      color: var(--navy);
+      opacity: 0.3;
+      flex-shrink: 0;
+    }
+
+    .card-2-back .contact-row span {
+      font-size: 0.8rem;
+      color: var(--navy);
+      opacity: 0.6;
+    }
+
+    /* Subtle border */
+    .card-2-back::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(26, 32, 104, 0.06);
+      border-radius: 6px;
+      pointer-events: none;
+    }
+
+    /* ══════════════════════════════════════════
+       DESIGN 3 — "THE BOLD SPLIT"
+       Half navy, half cream. Diagonal energy.
+       ══════════════════════════════════════════ */
+
+    .card-3-front {
+      background: var(--navy-deep);
+      display: flex;
+      position: relative;
+    }
+
+    .card-3-front .left-half {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem 0 2rem 2.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-3-front .left-half .brand-name {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--cream);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-3-front .left-half .tagline {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(245, 241, 235, 0.4);
+      font-weight: 500;
+    }
+
+    .card-3-front .right-half {
+      width: 45%;
+      background: var(--amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .card-3-front .right-half svg {
+      width: 100px;
+      height: 100px;
+      margin-left: 10px;
+    }
+
+    /* Card 3 Back */
+    .card-3-back {
+      background: var(--cream);
+      display: flex;
+      position: relative;
+    }
+
+    .card-3-back .left-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem 2rem 2rem 2.5rem;
+    }
+
+    .card-3-back .person-name {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.15rem;
+    }
+
+    .card-3-back .person-title {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.25rem;
+    }
+
+    .card-3-back .contact-line {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .card-3-back .contact-line svg {
+      width: 12px;
+      height: 12px;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+
+    .card-3-back .contact-line span {
+      font-size: 0.78rem;
+      color: var(--navy);
+      opacity: 0.65;
+    }
+
+    .card-3-back .right-accent {
+      width: 8%;
+      background: var(--navy-deep);
+      clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    /* Services strip at bottom of card 3 back */
+    .card-3-back .services-strip {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 8%;
+      padding: 0.6rem 2.5rem;
+      display: flex;
+      gap: 1.25rem;
+      background: rgba(26, 32, 104, 0.03);
+      border-top: 1px solid rgba(26, 32, 104, 0.05);
+    }
+
+    .card-3-back .services-strip span {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      opacity: 0.6;
+    }
+
+    /* ══════════════════════════════════════════
+       DESIGN 4 — "THE LUMINARY"
+       Dark card with centered amber glow.
+       ══════════════════════════════════════════ */
+
+    .card-4-front {
+      background: var(--navy-deep);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Radial amber glow */
+    .card-4-front::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(232, 153, 28, 0.2) 0%, transparent 60%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .card-4-front svg.glow-icon {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 0 20px rgba(232, 153, 28, 0.3));
+    }
+
+    .card-4-front .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-4-front .tagline {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 500;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Subtle grid pattern */
+    .card-4-front::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(245, 241, 235, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 241, 235, 0.02) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+    }
+
+    /* Card 4 Back */
+    .card-4-back {
+      background: var(--navy-deep);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2.25rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-4-back::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(245, 241, 235, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 241, 235, 0.02) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+    }
+
+    .card-4-back .person-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-4-back .person-title {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-4-back .amber-divider {
+      width: 32px;
+      height: 2px;
+      background: var(--amber);
+      margin-bottom: 1.25rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-4-back .contact-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-4-back .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card-4-back .contact-row svg {
+      width: 13px;
+      height: 13px;
+      color: var(--amber);
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+
+    .card-4-back .contact-row span {
+      font-size: 0.78rem;
+      color: var(--cream);
+      opacity: 0.5;
+    }
+
+    /* Small icon in bottom-right */
+    .card-4-back .corner-icon {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      opacity: 0.06;
+    }
+
+    .card-4-back .corner-icon svg {
+      width: 80px;
+      height: 80px;
+    }
+
+    /* ══════════════════════════════════════════
+       DESIGN 5 — "THE EDITORIAL"
+       Closest to original business cards.
+       Cream bg, bold serif left, icon right, amber line.
+       ══════════════════════════════════════════ */
+
+    .card-5-front {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      padding: 0;
+      position: relative;
+    }
+
+    .card-5-front .text-side {
+      padding: 2.5rem 0 2.5rem 3rem;
+      position: relative;
+    }
+
+    /* Vertical amber line — matches original card */
+    .card-5-front .text-side::before {
+      content: '';
+      position: absolute;
+      left: 1.75rem;
+      top: 1.5rem;
+      bottom: 1.5rem;
+      width: 2.5px;
+      background: var(--amber);
+    }
+
+    /* Small amber hexagon dot at top of line */
+    .card-5-front .text-side::after {
+      content: '';
+      position: absolute;
+      left: calc(1.75rem - 3.5px);
+      top: 1rem;
+      width: 8px;
+      height: 8px;
+      background: var(--navy);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+
+    .card-5-front .headline {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .card-5-front .icon-side {
+      padding: 2rem 2.5rem 2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-5-front .icon-side svg {
+      width: 160px;
+      height: 160px;
+    }
+
+    /* Card 5 Back — clean, contact-heavy */
+    .card-5-back {
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2.25rem 3rem;
+      position: relative;
+    }
+
+    .card-5-back .top-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1.75rem;
+    }
+
+    .card-5-back .person-name {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.15rem;
+    }
+
+    .card-5-back .person-title {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--amber);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .card-5-back .brand-small {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      opacity: 0.2;
+    }
+
+    .card-5-back .contact-grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem 2.5rem;
+    }
+
+    .card-5-back .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-5-back .contact-item svg {
+      width: 13px;
+      height: 13px;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+
+    .card-5-back .contact-item span {
+      font-size: 0.8rem;
+      color: var(--navy);
+      opacity: 0.65;
+    }
+
+    /* Bottom amber accent */
+    .card-5-back::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 3rem;
+      right: 3rem;
+      height: 2.5px;
+      background: var(--amber);
+    }
+
+    /* ══════════════════════════════════════════
+       DESIGN 6 — "THE HEADLINE"
+       Large bold text dominates, icon is secondary.
+       Matches the bold Didone style from originals.
+       ══════════════════════════════════════════ */
+
+    .card-6-front {
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2.5rem 3rem;
+      position: relative;
+    }
+
+    .card-6-front .headline-large {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-6-front .headline-large .amber { color: var(--amber); }
+
+    .card-6-front .brand-line {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card-6-front .brand-line svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .card-6-front .brand-line span {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      opacity: 0.5;
+    }
+
+    /* Large faded icon background */
+    .card-6-front .bg-icon {
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.04;
+    }
+
+    .card-6-front .bg-icon svg {
+      width: 280px;
+      height: 280px;
+    }
+
+    /* Card 6 Back */
+    .card-6-back {
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2.25rem 3rem;
+      position: relative;
+    }
+
+    .card-6-back .person-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.15rem;
+    }
+
+    .card-6-back .person-title {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.5rem;
+    }
+
+    .card-6-back .contact-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .card-6-back .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card-6-back .contact-row svg {
+      width: 13px;
+      height: 13px;
+      color: var(--amber);
+      opacity: 0.5;
+      flex-shrink: 0;
+    }
+
+    .card-6-back .contact-row span {
+      font-size: 0.78rem;
+      color: var(--cream);
+      opacity: 0.5;
+    }
+
+    /* Amber accent line top */
+    .card-6-back::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--amber);
+    }
+
+    /* ══════════════════════════════════════════
+       DESIGN 7 — "THE SPECTRUM"
+       Like Design 4 but with actual logo PNG.
+       ══════════════════════════════════════════ */
+
+    .card-7-front {
+      background: linear-gradient(135deg, #0a0e2e 0%, #141a52 50%, #0e1340 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Multi-color radial glow to match the colorful cube */
+    .card-7-front::before {
+      content: '';
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 260px;
+      height: 260px;
+      background:
+        radial-gradient(circle at 40% 50%, rgba(120, 80, 255, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 60% 40%, rgba(0, 200, 100, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 50% 60%, rgba(255, 180, 0, 0.08) 0%, transparent 45%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .card-7-front .logo-img {
+      width: 140px;
+      height: auto;
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 0 30px rgba(120, 80, 255, 0.15));
+    }
+
+    .card-7-front .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-7-front .tagline {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(245, 241, 235, 0.4);
+      font-weight: 500;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Subtle triangle mesh pattern overlay */
+    .card-7-front::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(60deg, rgba(120, 80, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(-60deg, rgba(120, 80, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(rgba(245, 241, 235, 0.015) 1px, transparent 1px);
+      background-size: 40px 40px, 40px 40px, 20px 20px;
+      pointer-events: none;
+    }
+
+    /* Card 7 Back */
+    .card-7-back {
+      background: linear-gradient(135deg, #0a0e2e 0%, #141a52 50%, #0e1340 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2.25rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-7-back::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(60deg, rgba(120, 80, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(-60deg, rgba(120, 80, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .card-7-back .person-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-7-back .person-title {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #e8991c, #a855f7, #22c55e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-7-back .spectrum-divider {
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, #e8991c, #a855f7);
+      margin-bottom: 1.25rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-7-back .contact-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-7-back .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card-7-back .contact-row svg {
+      width: 13px;
+      height: 13px;
+      color: rgba(245, 241, 235, 0.3);
+      flex-shrink: 0;
+    }
+
+    .card-7-back .contact-row span {
+      font-size: 0.78rem;
+      color: var(--cream);
+      opacity: 0.5;
+    }
+
+    /* Corner logo watermark */
+    .card-7-back .corner-logo {
+      position: absolute;
+      bottom: 1rem;
+      right: 1.5rem;
+      width: 50px;
+      opacity: 0.06;
+      z-index: 2;
+    }
+
+    /* ══════════════════════════════════════════
+       DESIGN 8 — "THE LUMINARY BAR"
+       Design 4 aesthetic + bottom contact strip.
+       Single-sided card (front = everything).
+       ══════════════════════════════════════════ */
+
+    .card-8-front {
+      background: var(--navy-deep);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Radial amber glow */
+    .card-8-front::before {
+      content: '';
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(232, 153, 28, 0.18) 0%, transparent 60%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* Grid overlay */
+    .card-8-front::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(245, 241, 235, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 241, 235, 0.02) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+    }
+
+    .card-8-front .card-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-8-front .card-main svg.glow-icon {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 0.75rem;
+      filter: drop-shadow(0 0 20px rgba(232, 153, 28, 0.3));
+    }
+
+    .card-8-front .card-main .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-8-front .card-main .tagline {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 500;
+    }
+
+    .card-8-front .bottom-bar {
+      display: none;
+    }
+
+    /* Card 8 Back */
+    .card-8-back {
+      background: var(--navy-deep);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-8-back::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(245, 241, 235, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 241, 235, 0.02) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+    }
+
+    .card-8-back .card-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-8-back .person-name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.2rem;
+    }
+
+    .card-8-back .person-title {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.25rem;
+    }
+
+    .card-8-back .contact-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .card-8-back .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card-8-back .contact-row svg {
+      width: 13px;
+      height: 13px;
+      color: var(--amber);
+      opacity: 0.5;
+      flex-shrink: 0;
+    }
+
+    .card-8-back .contact-row span {
+      font-size: 0.78rem;
+      color: var(--cream);
+      opacity: 0.5;
+    }
+
+    .card-8-back .bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 2.5rem;
+      background: rgba(232, 153, 28, 0.06);
+      border-top: 1px solid rgba(232, 153, 28, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-8-back .bottom-bar .brand-small {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--cream);
+      opacity: 0.5;
+    }
+
+    .card-8-back .bottom-bar .services-text {
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cream);
+      opacity: 0.45;
+    }
+
+    /* Corner icon watermark */
+    .card-8-back .corner-icon {
+      position: absolute;
+      top: 2rem;
+      right: 2.5rem;
+      opacity: 0.04;
+      z-index: 2;
+    }
+
+    .card-8-back .corner-icon svg {
+      width: 80px;
+      height: 80px;
+    }
+
+    /* ══════════════════════════════════════════
+       DESIGN 9 — "THE SPECTRUM BAR"
+       Design 7 aesthetic + bottom contact strip.
+       ══════════════════════════════════════════ */
+
+    .card-9-front {
+      background: linear-gradient(135deg, #0a0e2e 0%, #141a52 50%, #0e1340 100%);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-9-front::before {
+      content: '';
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 260px;
+      height: 260px;
+      background:
+        radial-gradient(circle at 40% 50%, rgba(120, 80, 255, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 60% 40%, rgba(0, 200, 100, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 50% 60%, rgba(255, 180, 0, 0.08) 0%, transparent 45%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .card-9-front::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(60deg, rgba(120, 80, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(-60deg, rgba(120, 80, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .card-9-front .card-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-9-front .card-main .logo-img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 0 25px rgba(120, 80, 255, 0.15));
+    }
+
+    .card-9-front .card-main .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.2rem;
+    }
+
+    .card-9-front .card-main .tagline {
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(245, 241, 235, 0.35);
+      font-weight: 500;
+    }
+
+    .card-9-front .bottom-bar {
+      display: none;
+    }
+
+    /* Card 9 Back */
+    .card-9-back {
+      background: linear-gradient(135deg, #0a0e2e 0%, #141a52 50%, #0e1340 100%);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-9-back::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(60deg, rgba(120, 80, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(-60deg, rgba(120, 80, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .card-9-back .card-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-9-back .person-name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.2rem;
+    }
+
+    .card-9-back .person-title {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #e8991c, #a855f7, #22c55e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.25rem;
+    }
+
+    .card-9-back .contact-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .card-9-back .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card-9-back .contact-row svg {
+      width: 13px;
+      height: 13px;
+      color: rgba(245, 241, 235, 0.25);
+      flex-shrink: 0;
+    }
+
+    .card-9-back .contact-row span {
+      font-size: 0.78rem;
+      color: var(--cream);
+      opacity: 0.45;
+    }
+
+    .card-9-back .bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 2.5rem;
+      background: rgba(120, 80, 255, 0.04);
+      border-top: 1px solid rgba(120, 80, 255, 0.08);
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-9-back .bottom-bar .brand-small {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--cream);
+      opacity: 0.5;
+    }
+
+    .card-9-back .bottom-bar .services-text {
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cream);
+      opacity: 0.45;
+    }
+
+    .card-9-back .corner-logo {
+      position: absolute;
+      top: 2rem;
+      right: 2.5rem;
+      width: 60px;
+      opacity: 0.04;
+      z-index: 2;
+    }
+
+    /* ══════════════════════════════════════════
+       DESIGN 10 — "SAND GLOW"
+       Warm sand base with soft white ambient
+       glow. Airy, beachside warmth.
+       ══════════════════════════════════════════ */
+
+    .card-10-front {
+      background: linear-gradient(160deg, #ecdcc6 0%, #e8d6be 40%, #eedec8 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-10-front::before {
+      content: '';
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 350px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.15) 40%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .card-10-front svg.glow-icon {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 0.75rem;
+      filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.5));
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-10-front .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #3a3560;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-10-front .tagline {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #8a7560;
+      font-weight: 500;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-10-back {
+      background: linear-gradient(160deg, #ecdcc6 0%, #e8d6be 40%, #eedec8 100%);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-10-back::before {
+      content: '';
+      position: absolute;
+      bottom: -10%;
+      right: -5%;
+      width: 300px;
+      height: 220px;
+      background: radial-gradient(ellipse, rgba(255, 255, 255, 0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .card-10-back .card-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-10-back .person-name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #3a3560;
+      margin-bottom: 0.2rem;
+    }
+
+    .card-10-back .person-title {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #8a7560;
+      margin-bottom: 1.25rem;
+    }
+
+    .card-10-back .contact-stack { display: flex; flex-direction: column; gap: 0.5rem; }
+    .card-10-back .contact-row { display: flex; align-items: center; gap: 0.6rem; }
+    .card-10-back .contact-row svg { width: 13px; height: 13px; color: #8a7560; opacity: 0.6; flex-shrink: 0; }
+    .card-10-back .contact-row span { font-size: 0.78rem; color: #3a3560; opacity: 0.55; }
+
+    .card-10-back .bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 2.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-10-back .bottom-bar .brand-small {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #3a3560;
+      opacity: 0.3;
+    }
+
+    .card-10-back .bottom-bar .services-text {
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #3a3560;
+      opacity: 0.3;
+    }
+
+    .card-10-back .corner-icon { position: absolute; top: 2rem; right: 2.5rem; opacity: 0.06; z-index: 2; }
+    .card-10-back .corner-icon svg { width: 80px; height: 80px; }
+
+    /* ══════════════════════════════════════════
+       DESIGN 11 — "SAND SPECTRUM"
+       Sand base + white glow with actual logo.
+       ══════════════════════════════════════════ */
+
+    .card-11-front {
+      background: linear-gradient(135deg, #ecdcc6 0%, #e6d4ba 50%, #eedec8 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-11-front::before {
+      content: '';
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 380px;
+      height: 320px;
+      background: radial-gradient(ellipse, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.12) 40%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .card-11-front .logo-img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.4));
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-11-front .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #3a3560;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-11-front .tagline {
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(58, 53, 96, 0.4);
+      font-weight: 500;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-11-back {
+      background: linear-gradient(135deg, #ecdcc6 0%, #e6d4ba 50%, #eedec8 100%);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-11-back::before {
+      content: '';
+      position: absolute;
+      bottom: -10%;
+      right: -5%;
+      width: 300px;
+      height: 220px;
+      background: radial-gradient(ellipse, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .card-11-back .card-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-11-back .person-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: #3a3560; margin-bottom: 0.2rem; }
+    .card-11-back .person-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #8a7560; margin-bottom: 1.25rem; }
+    .card-11-back .contact-stack { display: flex; flex-direction: column; gap: 0.5rem; }
+    .card-11-back .contact-row { display: flex; align-items: center; gap: 0.6rem; }
+    .card-11-back .contact-row svg { width: 13px; height: 13px; color: #8a7560; opacity: 0.6; flex-shrink: 0; }
+    .card-11-back .contact-row span { font-size: 0.78rem; color: #3a3560; opacity: 0.55; }
+
+    .card-11-back .bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 2.5rem;
+      background: rgba(255, 255, 255, 0.18);
+      border-top: 1px solid rgba(255, 255, 255, 0.28);
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-11-back .bottom-bar .brand-small { font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; color: #3a3560; opacity: 0.25; }
+    .card-11-back .bottom-bar .services-text { font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: #3a3560; opacity: 0.25; }
+    .card-11-back .corner-logo { position: absolute; top: 2rem; right: 2.5rem; width: 60px; opacity: 0.06; z-index: 2; }
+
+    /* ══════════════════════════════════════════
+       DESIGN 12 — "LEMON GLOW"
+       Soft yellow base + white ambient glow.
+       Hexagon icon variant.
+       ══════════════════════════════════════════ */
+
+    .card-12-front {
+      background: linear-gradient(160deg, #f5f0d0 0%, #f0eac5 40%, #f6f1d2 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-12-front::before {
+      content: '';
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 350px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.18) 40%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .card-12-front svg.glow-icon {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 0.75rem;
+      filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.55));
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-12-front .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #3a3560;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-12-front .tagline {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #8a8050;
+      font-weight: 500;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-12-back {
+      background: linear-gradient(160deg, #f5f0d0 0%, #f0eac5 40%, #f6f1d2 100%);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-12-back::before {
+      content: '';
+      position: absolute;
+      bottom: -10%;
+      right: -5%;
+      width: 300px;
+      height: 220px;
+      background: radial-gradient(ellipse, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .card-12-back .card-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-12-back .person-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: #3a3560; margin-bottom: 0.2rem; }
+    .card-12-back .person-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8050; margin-bottom: 1.25rem; }
+    .card-12-back .contact-stack { display: flex; flex-direction: column; gap: 0.5rem; }
+    .card-12-back .contact-row { display: flex; align-items: center; gap: 0.6rem; }
+    .card-12-back .contact-row svg { width: 13px; height: 13px; color: #8a8050; opacity: 0.6; flex-shrink: 0; }
+    .card-12-back .contact-row span { font-size: 0.78rem; color: #3a3560; opacity: 0.55; }
+
+    .card-12-back .bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 2.5rem;
+      background: rgba(255, 255, 255, 0.25);
+      border-top: 1px solid rgba(255, 255, 255, 0.35);
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-12-back .bottom-bar .brand-small { font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; color: #3a3560; opacity: 0.3; }
+    .card-12-back .bottom-bar .services-text { font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: #3a3560; opacity: 0.3; }
+    .card-12-back .corner-icon { position: absolute; top: 2rem; right: 2.5rem; opacity: 0.06; z-index: 2; }
+    .card-12-back .corner-icon svg { width: 80px; height: 80px; }
+
+    /* ══════════════════════════════════════════
+       DESIGN 13 — "LEMON SPECTRUM"
+       Soft yellow base + white glow, actual logo.
+       ══════════════════════════════════════════ */
+
+    .card-13-front {
+      background: linear-gradient(135deg, #f5f0d0 0%, #efe8c2 50%, #f6f1d2 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-13-front::before {
+      content: '';
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 380px;
+      height: 320px;
+      background: radial-gradient(ellipse, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.15) 40%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .card-13-front .logo-img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.45));
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-13-front .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #3a3560;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-13-front .tagline {
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(58, 53, 96, 0.4);
+      font-weight: 500;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-13-back {
+      background: linear-gradient(135deg, #f5f0d0 0%, #efe8c2 50%, #f6f1d2 100%);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-13-back::before {
+      content: '';
+      position: absolute;
+      bottom: -10%;
+      right: -5%;
+      width: 300px;
+      height: 220px;
+      background: radial-gradient(ellipse, rgba(255, 255, 255, 0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .card-13-back .card-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-13-back .person-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: #3a3560; margin-bottom: 0.2rem; }
+    .card-13-back .person-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8050; margin-bottom: 1.25rem; }
+    .card-13-back .contact-stack { display: flex; flex-direction: column; gap: 0.5rem; }
+    .card-13-back .contact-row { display: flex; align-items: center; gap: 0.6rem; }
+    .card-13-back .contact-row svg { width: 13px; height: 13px; color: #8a8050; opacity: 0.6; flex-shrink: 0; }
+    .card-13-back .contact-row span { font-size: 0.78rem; color: #3a3560; opacity: 0.55; }
+
+    .card-13-back .bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 2.5rem;
+      background: rgba(255, 255, 255, 0.22);
+      border-top: 1px solid rgba(255, 255, 255, 0.32);
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-13-back .bottom-bar .brand-small { font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; color: #3a3560; opacity: 0.25; }
+    .card-13-back .bottom-bar .services-text { font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: #3a3560; opacity: 0.25; }
+    .card-13-back .corner-logo { position: absolute; top: 2rem; right: 2.5rem; width: 60px; opacity: 0.06; z-index: 2; }
+
+    /* ─── RESPONSIVE ─── */
+    .card {
+      max-width: 100%;
+    }
+
+    @media (max-width: 700px) {
+      .card {
+        width: 100%;
+        max-width: 420px;
+        height: 240px;
+      }
+      .card-pair { flex-direction: column; align-items: center; }
+      .card-section { padding: 2rem 1rem; }
+      .page-header h1 { font-size: 1.75rem; }
+    }
+
+    /* ─── SEPARATOR ─── */
+    .section-separator {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section-separator hr {
+      border: none;
+      height: 1px;
+      background: rgba(26, 32, 104, 0.06);
+    }

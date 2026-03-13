@@ -1,0 +1,22 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.gallery {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 900px) {
+  .app-layout {
+    flex-direction: column;
+  }
+}
