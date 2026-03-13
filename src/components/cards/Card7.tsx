@@ -14,9 +14,7 @@ export function Card7({ config }: { config: CardConfig }) {
             alt={`${config.brandName} logo`}
           />
           <div className="brand-name">{config.brandName}</div>
-          <div className="tagline">
-            {config.tagline} <span>{config.taglineAlt}</span>
-          </div>
+          <div className="tagline">{config.tagline}</div>
         </div>
       </div>
       <div className="card-wrapper">

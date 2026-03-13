@@ -20,9 +20,7 @@ export function Card11({ config }: Card11Props) {
             alt="Innerlight"
           />
           <div className="brand-name">{config.brandName}</div>
-          <div className="tagline">
-            {config.tagline} <span>{config.taglineAlt}</span>
-          </div>
+          <div className="tagline">{config.tagline}</div>
         </div>
       </div>
 
