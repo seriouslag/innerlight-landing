@@ -105,6 +105,38 @@
   flex: 1;
 }
 
+.sidebar-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(26, 32, 104, 0.1);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+  margin-bottom: 0.75rem;
+  flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.sidebar-toggle-btn:hover {
+  background: rgba(26, 32, 104, 0.06);
+  border-color: rgba(26, 32, 104, 0.2);
+}
+
+.sidebar--collapsed {
+  width: 56px;
+  min-width: 56px;
+  padding: 1.25rem 0.75rem;
+  overflow: hidden;
+}
+
+.sidebar--collapsed .sidebar-toggle-btn {
+  margin-bottom: 0;
+}
+
 /* Mobile: sidebar becomes top drawer */
 @media (max-width: 900px) {
   .sidebar {

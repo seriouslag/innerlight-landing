@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 import type { CardConfig } from '../types';
 import '../sidebar.css';
 
 interface SidebarProps {
   config: CardConfig;
   onChange: (config: CardConfig) => void;
+  open: boolean;
+  onToggle: () => void;
 }
 
 interface SectionProps {
@@ -32,17 +35,20 @@ function Section({ title, defaultOpen = true, children }: SectionProps) {
 }
 
 /** Sidebar panel for customizing card text and colors. */
-export function Sidebar({ config, onChange }: SidebarProps) {
+export function Sidebar({ config, onChange, open, onToggle }: SidebarProps) {
   /** Updates a single field on the config. */
   function update<K extends keyof CardConfig>(key: K, value: CardConfig[K]) {
     onChange({ ...config, [key]: value });
   }
 
   return (
-    <aside className="sidebar">
-      <div className="sidebar-title">Customize</div>
+    <aside className={`sidebar${open ? '' : ' sidebar--collapsed'}`}>
+      <button className="sidebar-toggle-btn" onClick={onToggle} type="button" title={open ? 'Collapse sidebar' : 'Expand sidebar'}>
+        {open ? <PanelLeftClose size={18} /> : <PanelLeftOpen size={18} />}
+      </button>
+      {open && <div className="sidebar-title">Customize</div>}
 
-      <Section title="Brand">
+      {open && <Section title="Brand">
         <label className="sidebar-field">
           <span>Brand Name</span>
           <input
@@ -80,9 +86,9 @@ export function Sidebar({ config, onChange }: SidebarProps) {
             }
           />
         </label>
-      </Section>
+      </Section>}
 
-      <Section title="Contact">
+      {open && <Section title="Contact">
         <label className="sidebar-field">
           <span>Name</span>
           <input
@@ -131,9 +137,9 @@ export function Sidebar({ config, onChange }: SidebarProps) {
             onChange={(e) => update('location', e.target.value)}
           />
         </label>
-      </Section>
+      </Section>}
 
-      <Section title="Colors">
+      {open && <Section title="Colors">
         <label className="sidebar-field sidebar-color-field">
           <span>Navy</span>
           <div className="color-input-row">
@@ -182,7 +188,7 @@ export function Sidebar({ config, onChange }: SidebarProps) {
             />
           </div>
         </label>
-      </Section>
+      </Section>}
     </aside>
   );
 }

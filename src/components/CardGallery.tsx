@@ -1,4 +1,4 @@
-import type { CardConfig } from '../types';
+import type { CardConfig, CardColorOverride } from '../types';
 import { CardSection } from './CardSection';
 import { Card1 } from './cards/Card1';
 import { Card2 } from './cards/Card2';
@@ -13,6 +13,31 @@ import { Card10 } from './cards/Card10';
 import { Card11 } from './cards/Card11';
 import { Card12 } from './cards/Card12';
 import { Card13 } from './cards/Card13';
+
+/** Which color slots are editable for each design (1-based index). */
+const editableColors: Record<number, Array<keyof CardColorOverride>> = {
+  1: ['navy', 'amber', 'cream'],
+  2: ['navy', 'amber', 'cream'],
+  3: ['navy', 'amber', 'cream'],
+  4: ['navy', 'amber', 'cream'],
+  5: ['navy', 'amber', 'cream'],
+  6: ['navy', 'amber', 'cream'],
+  7: ['amber', 'cream'],
+  8: ['navy', 'amber', 'cream'],
+  9: ['amber', 'cream'],
+  10: ['navy', 'amber', 'cream'],
+  11: ['navy', 'amber', 'cream'],
+  12: ['navy', 'amber', 'cream'],
+  13: ['navy', 'amber', 'cream'],
+};
+
+/** Custom picker labels for designs where the three colors play different roles. */
+const colorLabels: Record<number, Partial<Record<keyof CardColorOverride, string>>> = {
+  10: { navy: 'Dark', amber: 'Accent', cream: 'Canvas' },
+  11: { navy: 'Dark', amber: 'Accent', cream: 'Canvas' },
+  12: { navy: 'Dark', amber: 'Accent', cream: 'Canvas' },
+  13: { navy: 'Dark', amber: 'Accent', cream: 'Canvas' },
+};
 
 const designs = [
   { title: 'The Classic', description: 'Navy front with amber accent stripe. Refined and authoritative.', Card: Card1 },
@@ -32,10 +57,20 @@ const designs = [
 
 interface CardGalleryProps {
   config: CardConfig;
+  onChange: (config: CardConfig) => void;
 }
 
 /** Renders all 13 card designs in a scrollable gallery. */
-export function CardGallery({ config }: CardGalleryProps) {
+export function CardGallery({ config, onChange }: CardGalleryProps) {
+  function handleColorOverride(designNumber: number, override: CardColorOverride | undefined) {
+    const next = { ...config.cardOverrides };
+    if (override === undefined) {
+      delete next[designNumber];
+    } else {
+      next[designNumber] = override;
+    }
+    onChange({ ...config, cardOverrides: next });
+  }
   return (
     <div className="gallery">
       <header className="page-header">
@@ -61,6 +96,9 @@ export function CardGallery({ config }: CardGalleryProps) {
             description={design.description}
             CardComponent={design.Card}
             config={config}
+            onColorOverride={handleColorOverride}
+            editableColors={editableColors[i + 1] ?? ['navy', 'amber', 'cream']}
+            colorLabels={colorLabels[i + 1] ?? {}}
           />
         </div>
       ))}

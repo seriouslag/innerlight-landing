@@ -85,6 +85,85 @@
       line-height: 1.5;
     }
 
+    /* ─── PER-CARD EDIT CONTROLS ─── */
+    .card-section-card-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .card-edit-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.75rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid rgba(26, 32, 104, 0.15);
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--navy);
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+
+    .card-edit-btn:hover,
+    .card-edit-btn.open {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--cream);
+    }
+
+    .card-color-panel {
+      margin-top: 0.5rem;
+      padding: 1rem;
+      background: white;
+      border: 1px solid rgba(26, 32, 104, 0.12);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(26, 32, 104, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 240px;
+    }
+
+    .card-color-panel-row label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .card-color-panel-row label span {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .card-color-reset-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.5rem;
+      border-radius: 6px;
+      border: 1px solid rgba(26, 32, 104, 0.15);
+      background: transparent;
+      color: var(--text-muted);
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+      margin-top: 0.25rem;
+    }
+
+    .card-color-reset-btn:hover {
+      color: var(--navy);
+      border-color: var(--navy);
+    }
+
     /* Card pair (front + back) */
     .card-pair {
       display: flex;
@@ -118,8 +197,9 @@
       position: relative;
       overflow: hidden;
       box-shadow:
-        0 4px 16px rgba(26, 32, 104, 0.08),
-        0 20px 60px rgba(26, 32, 104, 0.05);
+        0 2px 8px rgba(26, 32, 104, 0.12),
+        0 8px 24px rgba(26, 32, 104, 0.10),
+        0 20px 48px rgba(26, 32, 104, 0.08);
       transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s var(--ease-out-expo);
     }
 
@@ -1072,7 +1152,7 @@
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      background: linear-gradient(90deg, #e8991c, #a855f7, #22c55e);
+      background: linear-gradient(90deg, var(--amber), #a855f7, #22c55e);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -1084,7 +1164,7 @@
     .card-7-back .spectrum-divider {
       width: 40px;
       height: 2px;
-      background: linear-gradient(90deg, #e8991c, #a855f7);
+      background: linear-gradient(90deg, var(--amber), #a855f7);
       margin-bottom: 1.25rem;
       position: relative;
       z-index: 2;
@@ -1442,7 +1522,7 @@
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      background: linear-gradient(90deg, #e8991c, #a855f7, #22c55e);
+      background: linear-gradient(90deg, var(--amber), #a855f7, #22c55e);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -1517,7 +1597,7 @@
        ══════════════════════════════════════════ */
 
     .card-10-front {
-      background: linear-gradient(160deg, #ecdcc6 0%, #e8d6be 40%, #eedec8 100%);
+      background: linear-gradient(160deg, var(--cream) 0%, var(--cream-warm) 40%, var(--cream) 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1552,7 +1632,7 @@
       font-family: var(--font-display);
       font-size: 1.5rem;
       font-weight: 700;
-      color: #3a3560;
+      color: var(--navy);
       letter-spacing: -0.02em;
       margin-bottom: 0.25rem;
       position: relative;
@@ -1563,14 +1643,14 @@
       font-size: 0.65rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #8a7560;
+      color: var(--amber);
       font-weight: 500;
       position: relative;
       z-index: 2;
     }
 
     .card-10-back {
-      background: linear-gradient(160deg, #ecdcc6 0%, #e8d6be 40%, #eedec8 100%);
+      background: linear-gradient(160deg, var(--cream) 0%, var(--cream-warm) 40%, var(--cream) 100%);
       display: flex;
       flex-direction: column;
       position: relative;
@@ -1602,7 +1682,7 @@
       font-family: var(--font-display);
       font-size: 1.5rem;
       font-weight: 700;
-      color: #3a3560;
+      color: var(--navy);
       margin-bottom: 0.2rem;
     }
 
@@ -1611,14 +1691,14 @@
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #8a7560;
+      color: var(--amber);
       margin-bottom: 1.25rem;
     }
 
     .card-10-back .contact-stack { display: flex; flex-direction: column; gap: 0.5rem; }
     .card-10-back .contact-row { display: flex; align-items: center; gap: 0.6rem; }
-    .card-10-back .contact-row svg { width: 13px; height: 13px; color: #8a7560; opacity: 0.6; flex-shrink: 0; }
-    .card-10-back .contact-row span { font-size: 0.78rem; color: #3a3560; opacity: 0.55; }
+    .card-10-back .contact-row svg { width: 13px; height: 13px; color: var(--amber); opacity: 0.6; flex-shrink: 0; }
+    .card-10-back .contact-row span { font-size: 0.78rem; color: var(--navy); opacity: 0.55; }
 
     .card-10-back .bottom-bar {
       display: flex;
@@ -1635,7 +1715,7 @@
       font-family: var(--font-display);
       font-size: 0.75rem;
       font-weight: 600;
-      color: #3a3560;
+      color: var(--navy);
       opacity: 0.3;
     }
 
@@ -1643,7 +1723,7 @@
       font-size: 0.58rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #3a3560;
+      color: var(--navy);
       opacity: 0.3;
     }
 
@@ -1656,7 +1736,7 @@
        ══════════════════════════════════════════ */
 
     .card-11-front {
-      background: linear-gradient(135deg, #ecdcc6 0%, #e6d4ba 50%, #eedec8 100%);
+      background: linear-gradient(135deg, var(--cream) 0%, var(--cream-warm) 50%, var(--cream) 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1691,7 +1771,7 @@
       font-family: var(--font-display);
       font-size: 1.4rem;
       font-weight: 700;
-      color: #3a3560;
+      color: var(--navy);
       letter-spacing: -0.02em;
       margin-bottom: 0.2rem;
       position: relative;
@@ -1702,14 +1782,14 @@
       font-size: 0.62rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: rgba(58, 53, 96, 0.4);
+      color: var(--navy-faint);
       font-weight: 500;
       position: relative;
       z-index: 2;
     }
 
     .card-11-back {
-      background: linear-gradient(135deg, #ecdcc6 0%, #e6d4ba 50%, #eedec8 100%);
+      background: linear-gradient(135deg, var(--cream) 0%, var(--cream-warm) 50%, var(--cream) 100%);
       display: flex;
       flex-direction: column;
       position: relative;
@@ -1737,12 +1817,12 @@
       z-index: 2;
     }
 
-    .card-11-back .person-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: #3a3560; margin-bottom: 0.2rem; }
-    .card-11-back .person-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #8a7560; margin-bottom: 1.25rem; }
+    .card-11-back .person-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 0.2rem; }
+    .card-11-back .person-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.25rem; }
     .card-11-back .contact-stack { display: flex; flex-direction: column; gap: 0.5rem; }
     .card-11-back .contact-row { display: flex; align-items: center; gap: 0.6rem; }
-    .card-11-back .contact-row svg { width: 13px; height: 13px; color: #8a7560; opacity: 0.6; flex-shrink: 0; }
-    .card-11-back .contact-row span { font-size: 0.78rem; color: #3a3560; opacity: 0.55; }
+    .card-11-back .contact-row svg { width: 13px; height: 13px; color: var(--amber); opacity: 0.6; flex-shrink: 0; }
+    .card-11-back .contact-row span { font-size: 0.78rem; color: var(--navy); opacity: 0.55; }
 
     .card-11-back .bottom-bar {
       display: flex;
@@ -1755,8 +1835,8 @@
       z-index: 2;
     }
 
-    .card-11-back .bottom-bar .brand-small { font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; color: #3a3560; opacity: 0.25; }
-    .card-11-back .bottom-bar .services-text { font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: #3a3560; opacity: 0.25; }
+    .card-11-back .bottom-bar .brand-small { font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; color: var(--navy); opacity: 0.25; }
+    .card-11-back .bottom-bar .services-text { font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); opacity: 0.25; }
     .card-11-back .corner-logo { position: absolute; top: 2rem; right: 2.5rem; width: 60px; opacity: 0.06; z-index: 2; }
 
     /* ══════════════════════════════════════════
@@ -1766,7 +1846,7 @@
        ══════════════════════════════════════════ */
 
     .card-12-front {
-      background: linear-gradient(160deg, #f5f0d0 0%, #f0eac5 40%, #f6f1d2 100%);
+      background: linear-gradient(160deg, var(--cream) 0%, var(--cream-warm) 40%, var(--cream) 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1801,7 +1881,7 @@
       font-family: var(--font-display);
       font-size: 1.5rem;
       font-weight: 700;
-      color: #3a3560;
+      color: var(--navy);
       letter-spacing: -0.02em;
       margin-bottom: 0.25rem;
       position: relative;
@@ -1812,14 +1892,14 @@
       font-size: 0.65rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #8a8050;
+      color: var(--amber);
       font-weight: 500;
       position: relative;
       z-index: 2;
     }
 
     .card-12-back {
-      background: linear-gradient(160deg, #f5f0d0 0%, #f0eac5 40%, #f6f1d2 100%);
+      background: linear-gradient(160deg, var(--cream) 0%, var(--cream-warm) 40%, var(--cream) 100%);
       display: flex;
       flex-direction: column;
       position: relative;
@@ -1847,12 +1927,12 @@
       z-index: 2;
     }
 
-    .card-12-back .person-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: #3a3560; margin-bottom: 0.2rem; }
-    .card-12-back .person-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8050; margin-bottom: 1.25rem; }
+    .card-12-back .person-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 0.2rem; }
+    .card-12-back .person-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.25rem; }
     .card-12-back .contact-stack { display: flex; flex-direction: column; gap: 0.5rem; }
     .card-12-back .contact-row { display: flex; align-items: center; gap: 0.6rem; }
-    .card-12-back .contact-row svg { width: 13px; height: 13px; color: #8a8050; opacity: 0.6; flex-shrink: 0; }
-    .card-12-back .contact-row span { font-size: 0.78rem; color: #3a3560; opacity: 0.55; }
+    .card-12-back .contact-row svg { width: 13px; height: 13px; color: var(--amber); opacity: 0.6; flex-shrink: 0; }
+    .card-12-back .contact-row span { font-size: 0.78rem; color: var(--navy); opacity: 0.55; }
 
     .card-12-back .bottom-bar {
       display: flex;
@@ -1865,8 +1945,8 @@
       z-index: 2;
     }
 
-    .card-12-back .bottom-bar .brand-small { font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; color: #3a3560; opacity: 0.3; }
-    .card-12-back .bottom-bar .services-text { font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: #3a3560; opacity: 0.3; }
+    .card-12-back .bottom-bar .brand-small { font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; color: var(--navy); opacity: 0.3; }
+    .card-12-back .bottom-bar .services-text { font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); opacity: 0.3; }
     .card-12-back .corner-icon { position: absolute; top: 2rem; right: 2.5rem; opacity: 0.06; z-index: 2; }
     .card-12-back .corner-icon svg { width: 80px; height: 80px; }
 
@@ -1876,7 +1956,7 @@
        ══════════════════════════════════════════ */
 
     .card-13-front {
-      background: linear-gradient(135deg, #f5f0d0 0%, #efe8c2 50%, #f6f1d2 100%);
+      background: linear-gradient(135deg, var(--cream) 0%, var(--cream-warm) 50%, var(--cream) 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1911,7 +1991,7 @@
       font-family: var(--font-display);
       font-size: 1.4rem;
       font-weight: 700;
-      color: #3a3560;
+      color: var(--navy);
       letter-spacing: -0.02em;
       margin-bottom: 0.2rem;
       position: relative;
@@ -1922,14 +2002,14 @@
       font-size: 0.62rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: rgba(58, 53, 96, 0.4);
+      color: var(--navy-faint);
       font-weight: 500;
       position: relative;
       z-index: 2;
     }
 
     .card-13-back {
-      background: linear-gradient(135deg, #f5f0d0 0%, #efe8c2 50%, #f6f1d2 100%);
+      background: linear-gradient(135deg, var(--cream) 0%, var(--cream-warm) 50%, var(--cream) 100%);
       display: flex;
       flex-direction: column;
       position: relative;
@@ -1957,12 +2037,12 @@
       z-index: 2;
     }
 
-    .card-13-back .person-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: #3a3560; margin-bottom: 0.2rem; }
-    .card-13-back .person-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8050; margin-bottom: 1.25rem; }
+    .card-13-back .person-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 0.2rem; }
+    .card-13-back .person-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.25rem; }
     .card-13-back .contact-stack { display: flex; flex-direction: column; gap: 0.5rem; }
     .card-13-back .contact-row { display: flex; align-items: center; gap: 0.6rem; }
-    .card-13-back .contact-row svg { width: 13px; height: 13px; color: #8a8050; opacity: 0.6; flex-shrink: 0; }
-    .card-13-back .contact-row span { font-size: 0.78rem; color: #3a3560; opacity: 0.55; }
+    .card-13-back .contact-row svg { width: 13px; height: 13px; color: var(--amber); opacity: 0.6; flex-shrink: 0; }
+    .card-13-back .contact-row span { font-size: 0.78rem; color: var(--navy); opacity: 0.55; }
 
     .card-13-back .bottom-bar {
       display: flex;
@@ -1975,8 +2055,8 @@
       z-index: 2;
     }
 
-    .card-13-back .bottom-bar .brand-small { font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; color: #3a3560; opacity: 0.25; }
-    .card-13-back .bottom-bar .services-text { font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: #3a3560; opacity: 0.25; }
+    .card-13-back .bottom-bar .brand-small { font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; color: var(--navy); opacity: 0.25; }
+    .card-13-back .bottom-bar .services-text { font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); opacity: 0.25; }
     .card-13-back .corner-logo { position: absolute; top: 2rem; right: 2.5rem; width: 60px; opacity: 0.06; z-index: 2; }
 
     /* ─── RESPONSIVE ─── */

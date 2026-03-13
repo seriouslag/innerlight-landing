@@ -1,3 +1,10 @@
+/** Per-card color overrides. Any omitted key falls back to the global value. */
+export interface CardColorOverride {
+  navy?: string;
+  amber?: string;
+  cream?: string;
+}
+
 export interface CardConfig {
   /** Brand name displayed on cards */
   brandName: string;
@@ -28,4 +35,7 @@ export interface CardConfig {
   amber: string;
   /** Light background color */
   cream: string;
+
+  /** Per-card color overrides keyed by 1-based design number */
+  cardOverrides: Record<number, CardColorOverride>;
 }
