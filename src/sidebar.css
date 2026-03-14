@@ -105,6 +105,26 @@
   flex: 1;
 }
 
+.sidebar-select {
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid rgba(26, 32, 104, 0.1);
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--navy);
+  background: #fafafa;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  appearance: auto;
+}
+
+.sidebar-select:focus {
+  border-color: var(--amber);
+  background: #ffffff;
+}
+
 .sidebar-toggle-btn {
   display: flex;
   align-items: center;

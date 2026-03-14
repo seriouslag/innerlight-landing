@@ -1,4 +1,5 @@
 import type { CardConfig } from './types';
+import { DEFAULT_FONT_DISPLAY, DEFAULT_FONT_BODY } from './utils/fonts';
 
 export const defaultConfig: CardConfig = {
   brandName: 'innerlight',
@@ -17,6 +18,10 @@ export const defaultConfig: CardConfig = {
   navy: '#1a2068',
   amber: '#e8991c',
   cream: '#f5f1eb',
+
+  fontDisplay: DEFAULT_FONT_DISPLAY,
+  fontBody: DEFAULT_FONT_BODY,
+  fontOverrides: {},
 
   cardOverrides: {
     10: { navy: '#3a3560', amber: '#8a7560', cream: '#ecdcc6' },

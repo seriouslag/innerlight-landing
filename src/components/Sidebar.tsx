@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 import type { CardConfig } from '../types';
+import { DISPLAY_FONTS, BODY_FONTS } from '../utils/fonts';
 import '../sidebar.css';
 
 interface SidebarProps {
@@ -136,6 +137,33 @@ export function Sidebar({ config, onChange, open, onToggle }: SidebarProps) {
             value={config.location}
             onChange={(e) => update('location', e.target.value)}
           />
+        </label>
+      </Section>}
+
+      {open && <Section title="Typography">
+        <label className="sidebar-field">
+          <span>Display Font</span>
+          <select
+            className="sidebar-select"
+            value={config.fontDisplay}
+            onChange={(e) => update('fontDisplay', e.target.value)}
+          >
+            {DISPLAY_FONTS.map((f) => (
+              <option key={f.value} value={f.value}>{f.label}</option>
+            ))}
+          </select>
+        </label>
+        <label className="sidebar-field">
+          <span>Body Font</span>
+          <select
+            className="sidebar-select"
+            value={config.fontBody}
+            onChange={(e) => update('fontBody', e.target.value)}
+          >
+            {BODY_FONTS.map((f) => (
+              <option key={f.value} value={f.value}>{f.label}</option>
+            ))}
+          </select>
         </label>
       </Section>}
 

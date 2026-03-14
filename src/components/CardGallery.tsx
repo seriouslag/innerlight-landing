@@ -1,4 +1,4 @@
-import type { CardConfig, CardColorOverride } from '../types';
+import type { CardConfig, CardColorOverride, CardFontOverride } from '../types';
 import { CardSection } from './CardSection';
 import { Card1 } from './cards/Card1';
 import { Card2 } from './cards/Card2';
@@ -71,6 +71,17 @@ export function CardGallery({ config, onChange }: CardGalleryProps) {
     }
     onChange({ ...config, cardOverrides: next });
   }
+
+  function handleFontOverride(designNumber: number, override: CardFontOverride | undefined) {
+    const next = { ...config.fontOverrides };
+    if (override === undefined) {
+      delete next[designNumber];
+    } else {
+      next[designNumber] = override;
+    }
+    onChange({ ...config, fontOverrides: next });
+  }
+
   return (
     <div className="gallery">
       <header className="page-header">
@@ -97,6 +108,7 @@ export function CardGallery({ config, onChange }: CardGalleryProps) {
             CardComponent={design.Card}
             config={config}
             onColorOverride={handleColorOverride}
+            onFontOverride={handleFontOverride}
             editableColors={editableColors[i + 1] ?? ['navy', 'amber', 'cream']}
             colorLabels={colorLabels[i + 1] ?? {}}
           />

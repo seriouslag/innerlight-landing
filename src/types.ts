@@ -5,6 +5,14 @@ export interface CardColorOverride {
   cream?: string;
 }
 
+/** Per-card font overrides. Any omitted key falls back to the global value. */
+export interface CardFontOverride {
+  /** CSS font-family value for display/heading text */
+  fontDisplay?: string;
+  /** CSS font-family value for body/contact text */
+  fontBody?: string;
+}
+
 export interface CardConfig {
   /** Brand name displayed on cards */
   brandName: string;
@@ -38,4 +46,12 @@ export interface CardConfig {
 
   /** Per-card color overrides keyed by 1-based design number */
   cardOverrides: Record<number, CardColorOverride>;
+
+  /** CSS font-family value for display/heading text across all cards */
+  fontDisplay: string;
+  /** CSS font-family value for body/contact text across all cards */
+  fontBody: string;
+
+  /** Per-card font overrides keyed by 1-based design number */
+  fontOverrides: Record<number, CardFontOverride>;
 }
