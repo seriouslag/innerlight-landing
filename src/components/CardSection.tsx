@@ -3,7 +3,7 @@ import { Palette, RotateCcw } from 'lucide-react';
 import type { ComponentType } from 'react';
 import type { CardConfig, CardColorOverride, CardFontOverride } from '../types';
 import { deriveColorVars } from '../utils/colors';
-import { DISPLAY_FONTS, BODY_FONTS } from '../utils/fonts';
+import { FontCombobox } from './FontCombobox';
 
 const DEFAULT_COLOR_LABELS: Record<keyof CardColorOverride, string> = {
   navy: 'Navy',
@@ -138,29 +138,19 @@ export function CardSection({
               <div className="card-color-panel-row">
                 <label>
                   <span>Display</span>
-                  <select
-                    className="card-font-select"
+                  <FontCombobox
                     value={currentFontDisplay}
-                    onChange={(e) => handleFontChange('fontDisplay', e.target.value)}
-                  >
-                    {DISPLAY_FONTS.map((f) => (
-                      <option key={f.value} value={f.value}>{f.label}</option>
-                    ))}
-                  </select>
+                    onChange={(v) => handleFontChange('fontDisplay', v)}
+                  />
                 </label>
               </div>
               <div className="card-color-panel-row">
                 <label>
                   <span>Body</span>
-                  <select
-                    className="card-font-select"
+                  <FontCombobox
                     value={currentFontBody}
-                    onChange={(e) => handleFontChange('fontBody', e.target.value)}
-                  >
-                    {BODY_FONTS.map((f) => (
-                      <option key={f.value} value={f.value}>{f.label}</option>
-                    ))}
-                  </select>
+                    onChange={(v) => handleFontChange('fontBody', v)}
+                  />
                 </label>
               </div>
             </div>

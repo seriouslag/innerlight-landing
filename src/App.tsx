@@ -3,6 +3,8 @@ import type { CardConfig } from './types';
 import { defaultConfig } from './defaults';
 import { deriveColorVars } from './utils/colors';
 import { readConfigFromUrl, writeConfigToUrl } from './utils/url';
+import { findFontByCssValue } from './utils/fonts';
+import { loadFont } from './utils/loadFont';
 import { Sidebar } from './components/Sidebar';
 import { CardGallery } from './components/CardGallery';
 import './cards.css';
@@ -15,6 +17,7 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   // Sync global colors and fonts to CSS custom properties on :root.
+  // Also ensure the active fonts are loaded via the dynamic Google Fonts loader.
   useEffect(() => {
     const vars = deriveColorVars(config.navy, config.amber, config.cream);
     vars['--font-display'] = config.fontDisplay;
@@ -23,6 +26,12 @@ function App() {
     for (const [key, value] of Object.entries(vars)) {
       root.style.setProperty(key, value);
     }
+
+    // Preload whichever fonts are currently active globally
+    const displayFont = findFontByCssValue(config.fontDisplay);
+    const bodyFont = findFontByCssValue(config.fontBody);
+    if (displayFont) loadFont(displayFont.family);
+    if (bodyFont) loadFont(bodyFont.family);
   }, [config.navy, config.amber, config.cream, config.fontDisplay, config.fontBody]);
 
   // Persist full config to URL on every change so the URL is always shareable.

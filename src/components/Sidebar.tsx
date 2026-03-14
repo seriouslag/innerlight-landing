@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 import type { CardConfig } from '../types';
-import { DISPLAY_FONTS, BODY_FONTS } from '../utils/fonts';
+import { FontCombobox } from './FontCombobox';
 import '../sidebar.css';
 
 interface SidebarProps {
@@ -141,30 +141,20 @@ export function Sidebar({ config, onChange, open, onToggle }: SidebarProps) {
       </Section>}
 
       {open && <Section title="Typography">
-        <label className="sidebar-field">
+        <div className="sidebar-field">
           <span>Display Font</span>
-          <select
-            className="sidebar-select"
+          <FontCombobox
             value={config.fontDisplay}
-            onChange={(e) => update('fontDisplay', e.target.value)}
-          >
-            {DISPLAY_FONTS.map((f) => (
-              <option key={f.value} value={f.value}>{f.label}</option>
-            ))}
-          </select>
-        </label>
-        <label className="sidebar-field">
+            onChange={(v) => update('fontDisplay', v)}
+          />
+        </div>
+        <div className="sidebar-field">
           <span>Body Font</span>
-          <select
-            className="sidebar-select"
+          <FontCombobox
             value={config.fontBody}
-            onChange={(e) => update('fontBody', e.target.value)}
-          >
-            {BODY_FONTS.map((f) => (
-              <option key={f.value} value={f.value}>{f.label}</option>
-            ))}
-          </select>
-        </label>
+            onChange={(v) => update('fontBody', v)}
+          />
+        </div>
       </Section>}
 
       {open && <Section title="Colors">

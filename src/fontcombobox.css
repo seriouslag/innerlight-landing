@@ -1,0 +1,140 @@
+/* ── FontCombobox trigger ──────────────────────────────────────────────────── */
+
+.font-combobox {
+  width: 100%;
+}
+
+.font-combobox-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid rgba(26, 32, 104, 0.1);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: var(--navy);
+  background: #fafafa;
+  cursor: pointer;
+  text-align: left;
+  gap: 0.4rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.font-combobox-trigger:hover,
+.font-combobox-trigger.open {
+  border-color: var(--amber);
+  background: #ffffff;
+}
+
+.font-combobox-trigger-label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Dropdown portal (position: fixed, appended to document.body) ──────────── */
+
+.font-combobox-dropdown {
+  position: fixed;
+  z-index: 9999;
+  background: #ffffff;
+  border: 1px solid rgba(26, 32, 104, 0.12);
+  border-radius: 8px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 320px;
+}
+
+/* ── Search bar ──────────────────────────────────────────────────────────────── */
+
+.font-combobox-search-wrapper {
+  padding: 0.5rem 0.5rem 0.35rem;
+  border-bottom: 1px solid rgba(26, 32, 104, 0.07);
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.font-combobox-search {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid rgba(26, 32, 104, 0.12);
+  border-radius: 5px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--navy);
+  background: #fafafa;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.font-combobox-search:focus {
+  border-color: var(--amber);
+  background: #ffffff;
+}
+
+/* ── Scrollable list ─────────────────────────────────────────────────────────── */
+
+.font-combobox-list {
+  overflow-y: auto;
+  flex: 1;
+  padding: 0.35rem 0;
+}
+
+/* ── Category group header ───────────────────────────────────────────────────── */
+
+.font-combobox-group-label {
+  padding: 0.5rem 0.75rem 0.2rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  user-select: none;
+  font-family: var(--font-body);
+}
+
+/* ── Individual font item ────────────────────────────────────────────────────── */
+
+.font-combobox-item {
+  display: block;
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 0.9rem;
+  color: var(--navy);
+  cursor: pointer;
+  transition: background 0.1s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+.font-combobox-item:hover {
+  background: rgba(232, 153, 28, 0.08);
+}
+
+.font-combobox-item.selected {
+  background: rgba(232, 153, 28, 0.12);
+  color: var(--amber);
+  font-weight: 500;
+}
+
+/* ── Empty state ─────────────────────────────────────────────────────────────── */
+
+.font-combobox-empty {
+  padding: 1rem 0.75rem;
+  font-size: 0.82rem;
+  color: var(--text-muted, #888);
+  font-family: var(--font-body);
+  text-align: center;
+}
